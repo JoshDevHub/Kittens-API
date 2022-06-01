@@ -1,0 +1,25 @@
+<%= form_with model: kitten, html: { class: "flex flex-col gap-2" } do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "border border-black" %>
+  </div>
+
+  <div>
+    <%= form.label :age %>
+    <%= form.text_field :age, class: "border border-black" %>
+  </div>
+
+  <div>
+    <%= form.label :cuteness %>
+    <%= form.text_field :cuteness, class: "border border-black" %>
+  </div>
+
+  <div>
+    <%= form.label :softness %>
+    <%= form.text_field :softness, class: "border border-black" %>
+  </div>
+
+  <div>
+    <%= form.submit "Add Kitten", class: "border border-black" %>
+  </div>
+<% end %>

@@ -1,3 +1,11 @@
 <h1 class="font-bold">Kittens Show</h1>
 
-<%= @kitten.name %>
+<ul>
+  <% %i[name age softness cuteness].each do |property| %>
+  <li>
+    <%= "#{property}: #{@kitten.send(property)}" %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "Update this kitten's info", edit_kitten_path(@kitten) %>
