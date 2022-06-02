@@ -7,7 +7,7 @@ RSpec.describe "Updating a kitten", type: :system do
     it "updates the kitten" do
       visit edit_kitten_path(kitten)
 
-      fill_in "Age", with: 9
+      select "9", from: "Age"
 
       click_on "Add Kitten"
 
@@ -19,7 +19,7 @@ RSpec.describe "Updating a kitten", type: :system do
     it "re-renders the #edit view" do
       visit edit_kitten_path(kitten)
 
-      fill_in "Age", with: ""
+      fill_in "Name", with: ""
 
       click_on "Add Kitten"
 

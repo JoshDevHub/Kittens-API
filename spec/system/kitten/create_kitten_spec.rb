@@ -6,9 +6,12 @@ RSpec.describe "Creating a kitten", type: :system do
       visit new_kitten_path
 
       fill_in "Name", with: "Honey"
-      fill_in "Age", with: 5
-      fill_in "Softness", with: 9
-      fill_in "Cuteness", with: 7
+      # fill_in "Age", with: 5
+      # fill_in "Softness", with: 9
+      # fill_in "Cuteness", with: 7
+      select "5", from: "Age"
+      select "9", from: "Softness"
+      select "7", from: "Cuteness"
 
       click_on "Add Kitten"
 
