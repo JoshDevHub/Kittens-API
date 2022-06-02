@@ -9,3 +9,6 @@
 </ul>
 
 <%= link_to "Update this kitten's info", edit_kitten_path(@kitten) %>
+
+<%= button_to "Delete this kitten", @kitten, method: :delete,
+    class: "border border-black p-2" %>

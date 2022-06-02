@@ -6,6 +6,8 @@
   <% @kittens.each do |kitten| %>
     <li>
       <%= link_to kitten.name, kitten %>
+      <%= button_to "Delete Kitten", kitten_path(kitten), method: :delete,
+          class: "border border-black p-2" %>
     </li>
   <% end %>
 </ul>
