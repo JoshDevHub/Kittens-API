@@ -1,31 +1,33 @@
- <%= form_with model: kitten, html: { class: "flex flex-col gap-2" } do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "border border-black" %>
+ <%= form_with model: kitten, html: { class: "flex flex-col gap-2 ml-6" } do |form| %>
+  <div class="flex flex-col mb-4">
+    <%= form.label :name, class: "font-bold text-lg" %>
+    <%= form.text_field :name, class: "border border-black text-black p-1 md:max-w-sm" %>
   </div>
 
-  <div>
-    <%= form.label :age %>
+  <div class="mb-2 flex gap-8">
+    <%= form.label :age, class: "hidden" %>
     <%= form.select :age,
                     (1..20),
-                    { class: "border border-black" } %>
-  </div>
-
-  <div>
-    <%= form.label :cuteness %>
+                    { prompt: "Age" },
+                    { class: "border border-black p-1 text-black font-bold" } %>
+    <%= form.label :cuteness, class: "hidden" %>
     <%= form.select :cuteness,
                     (1..10),
-                    { class: "border border-black" } %>
-  </div>
-
-  <div>
-    <%= form.label :softness %>
+                    { prompt: "Cuteness" },
+                    { class: "border border-black text-black p-1 font-bold" } %>
+    <%= form.label :softness, class: "hidden" %>
     <%= form.select :softness,
                     (1..10),
-                    { class: "border border-black" } %>
+                    { prompt: "Softness" },
+                    { class: "border border-black text-black p-1 font-bold" } %>
   </div>
 
   <div>
-    <%= form.submit "Add Kitten", class: "border border-black" %>
+    <%= form.submit "Add Kitten",
+                    class: "rounded-md bg-teal-200 px-2 py-1 text-black
+                            font-bold border-transparent border-2
+                            hover:border-teal-200 hover:bg-transparent
+                            hover:text-teal-200 hover:cursor-pointer" %>
+
   </div>
 <% end %>
