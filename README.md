@@ -1,4 +1,4 @@
 # Kittens API
 
-An API featuring cute kittens
+A small CRUD app for practice with rendering JSON data from a controller.
 
