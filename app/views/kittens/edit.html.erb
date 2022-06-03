@@ -2,6 +2,9 @@
 
 <%= render "form", kitten: @kitten %>
 
-<%= button_to "Delete this Kitten", @kitten, method: :delete,
-    class: "border border-black p-2" %>
-
+<%= button_to "Delete #{@kitten.name}",
+              @kitten,
+              method: :delete,
+              class: "border border-transparent py-1 px-2 ml-6 mt-4 bg-red-300
+                      text-black font-bold rounded-md hover:bg-transparent
+                      border-2 hover:border-red-300 hover:text-red-300" %>

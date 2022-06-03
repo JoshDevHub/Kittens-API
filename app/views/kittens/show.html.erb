@@ -1,14 +1,22 @@
-<h1 class="font-bold">Kittens Show</h1>
+<div class="flex justify-between items-center mx-4 mb-6 md:max-w-[50%]">
+  <h1 class="text-2xl font-bold text-orange-200">Kitty Stats</h1>
+  <%= link_to "Update #{@kitten.name} stats",
+              edit_kitten_path(@kitten),
+              class: "text-violet-300 underline hover:text-slate-100" %>
+</div>
 
-<ul>
+<ul class="ml-6 mb-4 flex flex-col gap-4">
   <% %i[name age softness cuteness].each do |property| %>
   <li>
-    <%= "#{property}: #{@kitten.send(property)}" %>
+    <span class="font-bold"> <%= property.capitalize %>: </span>
+    <span> <%= @kitten.send(property) %> </span>
   </li>
   <% end %>
 </ul>
 
-<%= link_to "Update this kitten's info", edit_kitten_path(@kitten) %>
-
-<%= button_to "Delete this kitten", @kitten, method: :delete,
-    class: "border border-black p-2" %>
+<%= button_to "Delete #{@kitten.name}",
+              @kitten,
+              method: :delete,
+              class: "border border-transparent py-1 px-2 ml-6 bg-red-300
+                      text-black font-bold rounded-md hover:bg-transparent
+                      border-2 hover:border-red-300 hover:text-red-300" %>
